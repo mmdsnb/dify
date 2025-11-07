@@ -643,6 +643,29 @@ services:
     networks:
       - ssrf_proxy_network
       - default
+    extra_hosts:
+      - "cds.isoftstone.com:36.110.67.109"
+
+  # Adapter service
+  # Lightweight API service for querying all apps and their API keys
+  # Access via nginx: http://localhost/adapter/apps
+  adapter:
+    build:
+      context: ../adapter
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      ADAPTER_API_KEY: ${ADAPTER_API_KEY:-1q2w3e4r#@!}
+      DB_USERNAME: ${DB_USERNAME:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-difyai123456}
+      DB_HOST: ${DB_HOST:-db}
+      DB_PORT: ${DB_PORT:-5432}
+      DB_DATABASE: ${DB_DATABASE:-dify}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - default
 
   # worker service
   # The Celery worker for processing the queue.
