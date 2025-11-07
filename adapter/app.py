@@ -91,6 +91,7 @@ def get_apps():
             apps = []
             for row in rows:
                 apps.append({
+                    "id": str(row.id),
                     "code": row.name,  # 使用 name 作为 code
                     "name": row.name,
                     "description": row.description or "",

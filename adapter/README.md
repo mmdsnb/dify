@@ -38,6 +38,7 @@ Authorization: Bearer <ADAPTER_API_KEY>
 {
   "data": [
     {
+      "id": "12345678-1234-1234-1234-123456789abc",
       "code": "my-chatbot",
       "name": "my-chatbot",
       "description": "Customer support chatbot",

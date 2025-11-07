@@ -62,6 +62,7 @@ curl -X GET http://localhost/adapter/apps \
 {
   "data": [
     {
+      "id": "12345678-1234-1234-1234-123456789abc",
       "code": "my-app",
       "name": "my-app",
       "description": "My application",
