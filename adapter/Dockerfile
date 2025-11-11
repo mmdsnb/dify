@@ -37,6 +37,7 @@ COPY pyproject.toml .
 RUN uv pip install --system --no-cache -r pyproject.toml
 
 # 复制应用代码
+ARG CACHEBUST=1
 COPY app.py .
 
 # 暴露端口

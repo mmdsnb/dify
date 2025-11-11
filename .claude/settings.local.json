@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose config:*)",
+      "Bash(for service in api worker web db redis sandbox plugin_daemon ssrf_proxy nginx weaviate)",
+      "Bash(do echo \"=== $service ===\" awk \"/^  $service:/,/^  [a-z]/ {print}\" /workspace/dify/docker/docker-compose.yaml)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7",
+    "sequential-thinking",
+    "github",
+    "fetch",
+    "playwright"
+  ]
+}

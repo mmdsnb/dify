@@ -650,9 +650,7 @@ services:
   # Lightweight API service for querying all apps and their API keys
   # Access via nginx: http://localhost/adapter/apps
   adapter:
-    build:
-      context: ../adapter
-      dockerfile: Dockerfile
+    image: dify-adapter:latest
     restart: always
     environment:
       ADAPTER_API_KEY: ${ADAPTER_API_KEY:-1q2w3e4r#@!}
